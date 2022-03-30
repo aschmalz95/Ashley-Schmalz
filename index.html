@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashley Schmalz</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("s-N3Itn_V7sgGDmXr");
+        })();
+    </script>
+</head>
+
+<body>
+    <section id="landing-page" onmousemove="moveBackground(event), moveDarkmode(event)">
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/logo.svg" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                nav__link--anchor
+                link__hover-effect
+                link__hover-effect--black
+                ">About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#projects" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Projects</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                        nav__link--anchor
+                        link__hover-effect
+                        link__hover-effect--black
+                        ">Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="
+                        nav__link--anchor
+                        link__hover-effect
+                        link__hover-effect--black
+                        "><i class="fas fa-adjust"></i></a>
+                </li>
+        </nav>
+        </ul>
+
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title">Hey</br>
+                    I'm Ashley.</h1>
+                <p class="header__para">I'm a <b class="tan">Frontend Developer</b> with a strong drive for
+                    learning new languages and best practices.
+                    <br>
+                    Here's a bit more <b class="tan click" onclick="toggleModal()">about me.</b>
+                </p>
+                <div class="social__list">
+                    <a href="https://www.linkedin.com/in/ashley-schmalz-77418b219/" target="_blank"
+                        class="social__link click">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/aschmalz95" target="_blank" class="social__link click">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="./assets/Ashley Schmalz Resume.pdf" target="_blank" class="social__link click">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fas fa-envelope"></i>
+            </button>
+        </a>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Junior Frontend Developer</h4>
+                <p class="modal__para">
+                    I'm a <b class="red">Junior Frontend Developer</b> located in ATX. I have a strong desire for
+                    creating responsive designs with great <b class="red">user experiences.</b>
+                    <br>
+                    I have <b class="red">8 years</b> of internal documentation and task tracking experience in a
+                    high-stress
+                    field and thrive whether working on <b class="red">collaborate</b> or <b class="red">individual</b>
+                    projects.
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                            alt="">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                            src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                            src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="">
+                        <span class="language__name">Javascript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                            src="https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-svg-vector.svg" alt="">
+                        <span class="language__name">React</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">
+                    Let's have a chat!
+                </h3>
+                <h3 class="modal__sub-title modal__sub-title--contact">
+                    I'm currently open to new opportunities.
+                </h3>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send It My Way!</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">Thanks for the message! Looking forward to speaking
+                    to you soon.</div>
+            </div>
+        </div>
+    </section>
+    <div class="shapes">
+        <img src="./assets/clouds.png" class="shape shape--0">
+        <img src="./assets/clouds.png" class="shape shape--1">
+        <img src="./assets/clouds.png" class="shape shape--2">
+        <img src="./assets/clouds.png" class="shape shape--3">
+        <img src="./assets/clouds.png" class="shape shape--4">
+    </div>
+    <div class="coins">
+        <img src="./assets/coin.png" class="coin coins--0">
+        <img src="./assets/coin.png" class="coin coins--1">
+        <img src="./assets/coin.png" class="coin coins--2">
+        <img src="./assets/coin.png" class="coin coins--3">
+        <img src="./assets/coin.png" class="coin coins--4">
+    </div>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title tan">
+                    Here are some of my projects
+                </h1>
+
+                <ul class="project__list">
+                    <div>
+                        <li class="project">
+                            <div class="project__wrapper">
+                                <img src="./assets/MangaToshoMockup.png" class="project__img">
+                                <div class="project__wrapper--bg"></div>
+                                <div class="project__description">
+                                    <h3 class="project__description--title">
+                                        MangaTosho || E-Commerce Project
+                                    </h3>
+                                    <h4 class="project__description--sub-title">
+                                        Html5, CSS3, Javascript, React
+                                    </h4>
+                                    <p class="project__description--para">
+                                        React E-commerce app that displays data of recommended and popular shoujo (a
+                                        specific genre) manga. MangaTosho gives users the ability to not only sort
+                                        through manga via Price (High to low, low to high) & Rating but also gives them
+                                        the opportunity to add their favorites into a cart for purchase.
+                                    </p>
+                                    <div class="project__description--links">
+                                        <a href="https://github.com/aschmalz95/mangatosho"
+                                            class="project__description--link">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                        <a href="https://mangatosho.herokuapp.com/" target="_blank"
+                                            class="project__description--link">
+                                            <i class="fas fa-link"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                        <li class="project">
+                            <div class="project__wrapper">
+                                <img src="./assets/AllOutMockup.png" class="project__img">
+                                <div class="project__wrapper--bg"></div>
+                                <div class="project__description">
+                                    <h3 class="project__description--title">
+                                        Ashley's All-Out Dog Training
+                                    </h3>
+                                    <h4 class="project__description--sub-title">
+                                        Html5, CSS3
+                                    </h4>
+                                    <p class="project__description--para">
+                                        Ashley's All-Out Dog Training helps connect dog owner's in the Austin, TX area
+                                        to local certified trainer, Ashley Schmalz. The webpage is completely responsive
+                                        on all devices for accessibility.
+                                    </p>
+                                    <div class="project__description--links">
+                                        <a href="https://github.com/aschmalz95/AllOutDogTraining"
+                                            class="project__description--link">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                        <a href="https://ashleysalloutdog.training/" target="_blank"
+                                            class="project__description--link">
+                                            <i class="fas fa-link"></i>
+                                        </a>
+                                    </div>
+
+                                    <div>
+                        <li class="project">
+                            <div class="project__wrapper">
+                                <img src="./assets/FureverFriends.png" class="project__img">
+                                <div class="project__wrapper--bg"></div>
+                                <div class="project__description">
+                                    <h3 class="project__description--title">
+                                        Furever Friends Project
+                                    </h3>
+                                    <h4 class="project__description--sub-title">
+                                        Html, CSS, Javascript, Restful API's
+                                    </h4>
+                                    <p class="project__description--para">
+                                        Using Petfinder's Restful API's, Furever friends uses their database to relay
+                                        local pets found in the Austin Pets Alive shelter that are ready for their new
+                                        home! Furever Friends also allows users to use the search bar to find the best
+                                        pet according to their needs.
+                                    </p>
+                                    <div class="project__description--links">
+                                        <a href="https://github.com/aschmalz95/FureverFriends" target="_blank"
+                                            class="project__description--link">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                        <a href="https://furever-friends.vercel.app/"
+                                            class="project__description--link">
+                                            <i class="fas fa-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <img src="./assets/pipe.png" class="pipe" alt="">
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer__row">
+
+                <figure>
+                    <img src="./assets/logo.svg" class="footer__logo--img">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="https://github.com/aschmalz95" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white">
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/ashley-schmalz-77418b219/" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white">
+                        LinkedIn
+                    </a>
+                    <a href="#" onclick="toggleModal()" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white">
+                        Contact
+                    </a>
+                    <a href="" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white">
+                        Resume
+                    </a>
+                </div>
+                <div class="footer__copyright">Copyright © Ashley Schmalz 2022</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
